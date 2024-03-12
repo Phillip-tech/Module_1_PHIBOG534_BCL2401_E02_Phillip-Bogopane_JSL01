@@ -31,3 +31,27 @@ Imagine you are building a virtual pet adoption website, and you need to create 
 This challenge helps students practice basic string manipulation and validation in JavaScript, along with simple DOM manipulation to create an interactive and user-friendly interface.
 
 Check out the practice challenges on Scrimba here: https://scrimba.com/playlist/pqPae6ZH7
+
+const validateSyntax = () => {
+    const input = document.getElementById('petInput').value;
+    const result = /^pet_[a-zA-Z0-9]+$/.test(input) ? 'Valid Syntax' : 'Invalid Syntax';
+    document.getElementById('result').innerText = result;
+};
+
+
+
+function validateSyntax() {
+    let input = document.getElementById('petInput').value.trim();
+    let result = ''; // Placeholder for validation result
+ 
+    // Check if input starts with 'pet_' and followed by alphanumeric characters
+
+    if (/^pet_[a-zA-Z0-9]+$/.test(input)) {
+        result = 'Valid Syntax'+ <span style="color: #green; font-size: 60px; ">&#x2705;</span>';
+    } else {
+        result = 'Invalid Syntax.' + <span style="color: #green; font-size: 60px; ">&#x78;</span>';
+    }
+ 
+    // Display the validation result
+    document.getElementById('result').innerText = result;
+ }
