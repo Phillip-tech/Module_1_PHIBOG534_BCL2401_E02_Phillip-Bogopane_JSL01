@@ -55,3 +55,79 @@ function validateSyntax() {
     // Display the validation result
     document.getElementById('result').innerText = result;
  }
+
+ const validateSyntax = () => {
+    const input = document.getElementById('petInput').value;
+    const isValid = /^pet_[a-zA-Z0-9]+$/.test(input);
+
+    let resultText = isValid ? 'Valid Syntax' : 'Invalid Syntax';
+    let resultIcon = isValid ? '✅' : '❌';
+    let resultColor = isValid ? 'green' : 'red';
+
+    document.getElementById('result').innerText = resultText;
+    document.getElementById('result').style.color = resultColor;
+    document.getElementById('resultIcon').innerHTML = resultIcon;
+    document.getElementById('resultIcon').style.color = resultColor;
+};
+
+const validateSyntax = () => {
+    const input = document.getElementById('petInput').value.trim();
+    const result = /^pet_[a-zA-Z0-9]+$/.test(input) ? 'Valid Syntax <span style="color: green; font-size: 60px;">&#x2705;</span>' : 'Invalid Syntax <span style="color: red; font-size: 60px;">&#x78;</span>';
+    document.getElementById('result').innerHTML = result;
+};
+
+
+Module-02
+
+Chart Reprenstation
+
+const updateProgressCharts = () => {
+    // Implement progress chart logic here (e.g., using Chart.js or D3.js)
+    
+    // Update workout progress chart
+    const workoutProgressChart = new Chart(document.getElementById('workoutProgressChart'), {
+        type: 'bar',
+        data: {
+            labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+            datasets: [{
+                label: 'Workout Progress',
+                data: [15, 20, 18, 25],
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    // Update calorie intake progress chart
+    const calorieIntakeProgressChart = new Chart(document.getElementById('calorieIntakeProgressChart'), {
+        type: 'line',
+        data: {
+            labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7'],
+            datasets: [{
+                label: 'Calorie Intake',
+                data: [2000, 1800, 1900, 2100, 2200, 2000, 1900],
+                fill: false,
+                borderColor: 'rgb(255, 99, 132)',
+                tension: 0.1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    document.querySelector('#workoutProgress').textContent = "Updated workout progress...";
+    document.querySelector('#calorieIntakeProgress').textContent = "Updated calorie intake progress...";
+};
