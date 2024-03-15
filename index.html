@@ -1,23 +1,35 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Pet Adoption Validator</title>
+
     <link rel="stylesheet" href="index.css">
+   
     <!-- Include Font Awesome CSS in your HTML file -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
+    <!-- Include your JavaScript file with the script tag, and add the defer attribute for deferred execution -->
+    <script src="script.js" defer></script>
 
-    <script src="script.js" defer=""></script>
 </head>
-<body>
-    <h2>Pet Adoption Syntax Validator</h2>
-    <h3>Note to all SPCA volunteers 📝</h3>
-    <p>All pet adoption codes start with "pet_" and then the pet's birth year and name.</p>
-    <p><strong>Example:</strong> pet_2015Forrest</p>
-    <input type="text" id="petInput" placeholder="Enter pet adoption detail">
-    <button onclick="validateSyntax()">Validate</button>
-    <p id="result"></p>
     
-   
+<body>
+       
+        <h2>Pet Adoption Syntax Validator</h2>
+           
+             <h3>Note to all SPCA volunteers 📝</h3>
+
+                <p>All pet adoption codes start with "pet_" and then the pet's birth year and name.</p>
+                      
+                    <p><strong>Example:</strong> pet_2015Forrest</p>
+         
+                              <input type="text" id="petInput" placeholder="Enter pet adoption detail">
+                                 
+                    <button onclick="validateSyntax()">Validate</button>
+                    
+        <p id="result"></p>
 </body>
 </html>

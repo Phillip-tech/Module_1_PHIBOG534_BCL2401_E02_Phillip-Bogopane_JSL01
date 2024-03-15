@@ -35,11 +35,12 @@ button:hover {
 #result {
     font-size: 2em;
     margin-top: 20px;
+    
 }
 
 .valid {
     color: #008000;
-    text-align: center;
+    
     
 }
 
